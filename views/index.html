@@ -1,0 +1,73 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Write-good!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <header>
+      <h1>
+        Write-good <em>– Naive linter for English prose</em>
+      </h1>
+    </header>
+
+    <main>
+      <p class="bold">Oh hi,</p>
+      <p>this is a glitch that uses <a href="https://github.com/btford/write-good">write-good</a> to offer suggestions for English prose:</p>
+      
+      <form>
+        <input type="text" maxlength="300" placeholder="Write prose!" id="sentence" value="So the cat was stolen.">
+        <button type="submit">Submit</button>
+      </form>
+      <br><small>Note: max 300 chars. Remix and adjust.</small><br>
+      
+      <div class="flex">
+        <section class="checks">
+          <h2>
+            Checks <a href="#" data-toggle="[+]" data-target="ul#checks">[-]</a>
+          </h2>
+          <ul id="checks">
+          </ul>
+        </section>
+        
+        <section class="suggestions">
+          <h2>
+            Suggestions
+          </h2>
+          <var id="suggestions-for"></var>
+          <ul id="suggestions">
+            <li>None yet</li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer id="gWidget">
+      <a href="https://glitch.com">
+        Remix this in Glitch
+      </a>
+    </footer>
+    <script src="https://widget.gomix.me/widget.min.js"></script>
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"
+            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+            crossorigin="anonymous"></script>
+    <script src="/client.js"></script>
+
+  </body>
+</html>
